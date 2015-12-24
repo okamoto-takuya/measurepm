@@ -10,6 +10,8 @@
 #include "measure/UniquePtr.h"
 #include "measure/SharedPtr.h"
 #include "measure/MallocFree.h"
+#include "measure/CopyPtr.h"
+#include "measure/MovePtr.h"
 
 JobMgr::JobMgr()
 {
@@ -27,6 +29,8 @@ void JobMgr::doJob()
   measureJobList.push_back(new measure::UniquePtr ("Use Unique Ptr case  :"));
   measureJobList.push_back(new measure::SharedPtr ("Use SHhred Ptr case  :"));
   measureJobList.push_back(new measure::MallocFree("Use Malloc/Free case :"));
+  measureJobList.push_back(new measure::CopyPtr   ("Use Copy case        :"));
+  measureJobList.push_back(new measure::MovePtr   ("Use Move case        :"));
 
   // Traverse Job List(container) by range-based for loop.
   for(auto&& jobs : measureJobList)

@@ -4,4 +4,6 @@ add_library(measure STATIC
   UniquePtr.cc
   SharedPtr.cc
   MallocFree.cc
+  CopyPtr.cc
+  MovePtr.cc
   )
