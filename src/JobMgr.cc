@@ -9,6 +9,7 @@
 #include "measure/RawPtr.h"
 #include "measure/UniquePtr.h"
 #include "measure/SharedPtr.h"
+#include "measure/MallocFree.h"
 
 JobMgr::JobMgr()
 {
@@ -22,9 +23,10 @@ void JobMgr::doJob()
   std::vector<measure::MeasurePM*> measureJobList;
 
   // Add each Measure Jobs.
-  measureJobList.push_back(new measure::RawPtr   ("Use Raw Ptr case    :"));
-  measureJobList.push_back(new measure::UniquePtr("Use Unique Ptr case :"));
-  measureJobList.push_back(new measure::SharedPtr("Use SHared Ptr case :"));
+  measureJobList.push_back(new measure::RawPtr    ("Use Raw Ptr case     :"));
+  measureJobList.push_back(new measure::UniquePtr ("Use Unique Ptr case  :"));
+  measureJobList.push_back(new measure::SharedPtr ("Use SHhred Ptr case  :"));
+  measureJobList.push_back(new measure::MallocFree("Use Malloc/Free case :"));
 
   // Traverse Job List(container) by range-based for loop.
   for(auto&& jobs : measureJobList)
