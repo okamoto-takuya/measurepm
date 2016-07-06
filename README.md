@@ -21,6 +21,7 @@ You can build and test this component by following procedure below under your lo
     $ cmake ..
     $ make                      // Perform production build
     $ make check                // (Not supported yet, sorry...)
+    $ src/Main                  // Run this program.
 
 ## Contribution
 
