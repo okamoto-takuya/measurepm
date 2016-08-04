@@ -1,5 +1,5 @@
-#ifndef MEASURE_RAW_PTR_H
-#define MEASURE_RAW_PTR_H
+#ifndef MEASURE_MOVE_PTR_H
+#define MEASURE_MOVE_PTR_H
 
 #include <string>
 #include <vector>
@@ -11,11 +11,11 @@
 
 namespace measure
 {
-  class RawPtr : public MeasurePM
+  class MovePtr : public MeasurePM
   {
   public:
-    RawPtr(std::string);
-    ~RawPtr();
+    MovePtr(std::string);
+    ~MovePtr();
     
   private:
     std::string description;

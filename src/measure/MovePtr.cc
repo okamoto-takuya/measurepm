@@ -5,29 +5,30 @@
 #include <memory>
 #include <assert.h>
 
-#include "SharedPtr.h"
+#include "MovePtr.h"
 
 namespace measure
 {
-  
-  SharedPtr::SharedPtr(std::string str) :
+
+  MovePtr::MovePtr(std::string str) :
     description(str)
   {
   }
   
-  SharedPtr::~SharedPtr()
+  MovePtr::~MovePtr()
   {
   }
   
-  void SharedPtr::doMeasure()
+  void MovePtr::doMeasure()
   {
     startMeasure();
     std::cout << description;
     
     // Measurement Body
+    std::vector<int> p(1000), q;
     for(auto i = 0; i <= RepeatMax; i++)
       {
-      std::shared_ptr<int> p(new int(1));
+	q = std::move(p);  // Move
       }
     
     endMeasure();

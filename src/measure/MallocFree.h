@@ -1,5 +1,5 @@
-#ifndef MEASURE_RAW_PTR_H
-#define MEASURE_RAW_PTR_H
+#ifndef MEASURE_MALLOC_FREE_H
+#define MEASURE_MALLOC_FREE_H
 
 #include <string>
 #include <vector>
@@ -11,11 +11,11 @@
 
 namespace measure
 {
-  class RawPtr : public MeasurePM
+  class MallocFree : public MeasurePM
   {
   public:
-    RawPtr(std::string);
-    ~RawPtr();
+    MallocFree(std::string);
+    ~MallocFree();
     
   private:
     std::string description;

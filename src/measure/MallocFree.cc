@@ -4,21 +4,21 @@
 #include <iostream>
 #include <assert.h>
 
-#include "RawPtr.h"
+#include "MallocFree.h"
 
 namespace measure
 {
 
-  RawPtr::RawPtr(std::string str) :
+  MallocFree::MallocFree(std::string str) :
     description(str)
 {
 }
 
-RawPtr::~RawPtr()
+MallocFree::~MallocFree()
 {
 }
 
-void RawPtr::doMeasure()
+void MallocFree::doMeasure()
 {
   startMeasure();
   std::cout << description;
@@ -26,8 +26,8 @@ void RawPtr::doMeasure()
   // Measurement Body
   for(auto i = 0; i <= RepeatMax; i++)
     {
-      auto p = new int(1);
-      delete p;
+      auto *p = (int *)malloc(sizeof(int));
+      free(p);
     }
 
   endMeasure();

@@ -18,6 +18,5 @@ public:
   void doJob();
   
  private:
-  std::vector<measure::MeasurePM> measurePm;
 };
 #endif
